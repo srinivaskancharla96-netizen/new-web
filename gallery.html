@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>Treatment Gallery | Follicare Nellore</title>
+  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap' rel='stylesheet'>
+  <style>
+    :root{--purple:#6f2f63; --bg:#f9f6f8;}
+    body{font-family:'Open Sans',sans-serif; margin:0; background:var(--bg);}
+    header{background:#fff; padding:15px 5%; display:flex; justify-content:space-between; align-items:center;}
+    .gallery-grid{max-width:1200px; margin:50px auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:25px; padding:0 20px;}
+    .item{background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 10px 20px rgba(0,0,0,0.05); transition:0.3s;}
+    .item:hover{transform:translateY(-10px);}
+    .item img{width:100%; height:280px; object-fit:cover;}
+    .label{padding:15px; text-align:center; font-weight:700; color:var(--purple); text-transform:uppercase; font-size:14px; border-top:1px solid #f0f0f0;}
+    h1{text-align:center; font-family:'Playfair Display',serif; color:var(--purple); font-size:42px; margin-top:40px;}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html"><img src='https://raw.githubusercontent.com/srinivaskancharla96-netizen/images/main/test.jpg' height="35"/></a>
+  <nav><a href="index.html" style="text-decoration:none; color:#333; font-weight:700;">← Back to Home</a></nav>
+</header>
+
+<h1>Treatment Results Gallery</h1>
+
+<div class="gallery-grid">
+  <div class="item">
+    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary3.jpg"/>
+    <div class="label">Hair Transplant: 8 Months Result</div>
+  </div>
+  
+  <div class="item">
+    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary4.jpg"/>
+    <div class="label">Hydrafacial: Instant Glow</div>
+  </div>
+
+  <div class="item">
+    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary2.jpg"/>
+    <div class="label">Advanced Skin Consultation</div>
+  </div>
+
+  <div class="item">
+    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary1.jpg"/>
+    <div class="label">Acne & Pigmentation Control</div>
+  </div>
+</div>
+
+<div style="text-align:center; padding:50px;">
+    <p>Want to see more? Follow us on Instagram or book a consultation.</p>
+    <a href="index.html#contact" style="background:var(--purple); color:#fff; padding:15px 30px; border-radius:50px; text-decoration:none;">Book Your Session</a>
+</div>
+</body>
+</html>
