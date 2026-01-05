@@ -1,66 +1,167 @@
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset='utf-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Advanced Skin Care Nellore | Follicare</title>
-  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;600&display=swap' rel='stylesheet'>
-  <style>
-    :root{--purple:#6f2f63; --accent:#2dbf6b; --light-bg:#fdf9fc; --max-width:1200px;}
-    body{font-family:'Open Sans',sans-serif; margin:0; color:#333;}
-    header{background:#fff; padding:15px 5%; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.05); position:sticky; top:0; z-index:1000;}
-    nav a{text-decoration:none; color:#333; font-weight:600; margin-left:20px;}
-    .skin-hero{background:var(--light-bg); padding:80px 5%; display:flex; align-items:center; gap:40px;}
-    h1, h2{font-family:'Playfair Display',serif; color:var(--purple);}
-    .info-block{max-width:var(--max-width); margin:50px auto; padding:40px; background:#fff; border-radius:30px; border:1px solid #eee; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
-    .btn-glow{background:var(--accent); color:#fff; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block;}
-    @media (max-width:768px){.skin-hero, .info-block{grid-template-columns:1fr; text-align:center;}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Skin Doctor in Nellore | Acne & Laser Treatment | Follicare</title>
+    <meta name="description" content="Expert skin treatments in Nellore. Consult the best skin doctor for Acne, pimples, Carbon laser, and Glutathione Nellore whitening. Permanent laser hair removal.">
+    <meta name="keywords" content="Best skin doctor in Nellore, Skin treatments Nellore, Acne, pimples, Carbon laser, Glutathione Nellore, laser hair removal, chemical peel, whitening">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--purple:#6f2f63;--accent:#2dbf6b;--white:#ffffff;--max-width:1200px;}
+        body{font-family:'Open Sans',sans-serif;margin:0;padding:0;color:#333;line-height:1.6;overflow-x:hidden;background:#fcfaf8;}
+        
+        /* FIXED HEADER & TOPBAR */
+        .topbar{background:var(--purple);color:#fff;padding:8px 20px;font-size:13px;display:flex;justify-content:space-between;align-items:center;}
+        header{background:rgba(255,255,255,0.98); position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1); width:100%;}
+        .nav-container{max-width:var(--max-width); margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:12px 20px;}
+        .nav-links{display:flex; align-items:center;}
+        .nav-links a{text-decoration:none; color:#333; font-weight:600; margin-left:25px; transition:0.3s;}
+        .nav-links a:hover{color:var(--purple);}
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=2070'); 
+            background-size: cover; background-position: center; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+        }
+        .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(32px, 5vw, 56px); margin:0; }
+
+        /* SERVICES GRID */
+        .section { padding:60px 20px; }
+        .wrap { max-width:var(--max-width); margin:0 auto; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:40px; }
+        .card { background:#fff; padding:35px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.05); text-align:center; border-bottom:5px solid var(--purple); }
+        .card h3 { color:var(--purple); font-family:'Playfair Display',serif; margin-bottom:15px; }
+
+        /* TREATMENT RESULTS (FIXED VISIBILITY) */
+        .results-section { background:#fff; padding:80px 20px; text-align:center; }
+        .results-container { display:flex; justify-content:center; gap:25px; flex-wrap:wrap; margin-top:40px; }
+        .result-item { width:100%; max-width:400px; border-radius:20px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.1); }
+        .result-item img { width:100%; height:auto; display:block; transition: 0.5s; }
+        .result-item:hover img { transform: scale(1.05); }
+
+        /* POPUP MODAL */
+        .modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85); }
+        .modal-content { background:#fff; margin:8% auto; padding:40px; width:90%; max-width:500px; border-radius:20px; position:relative; }
+        .close { position:absolute; right:20px; top:10px; font-size:30px; cursor:pointer; }
+        form input, form select { width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px; }
+
+        .btn-main { background:var(--accent); color:#fff; padding:14px 30px; border-radius:50px; text-decoration:none; font-weight:700; border:none; cursor:pointer; display:inline-block; }
+        footer { background:var(--purple); color:#fff; padding:60px 20px; text-align:center; }
+        
+        @media(max-width:768px) {
+            .nav-links a { display:none; } /* Basic mobile fix, can be replaced with hamburger */
+            .nav-links a.btn-main { display:block; margin:0; }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <img src='https://raw.githubusercontent.com/srinivaskancharla96-netizen/images/main/test.jpg' height="40"/>
-  <nav><a href="index.html">Home</a><a href="skincare.html" style="color:var(--purple)">Skin Care</a><a href="gallery.html">Gallery</a></nav>
-</header>
 
-<section class="skin-hero">
-  <div style="flex:1">
-    <h1>Clinical Skin Transformations</h1>
-    <p style="font-size:20px;">We combine advanced medical technology with dermatological expertise for a healthy, youthful glow.</p>
-    <a href="https://wa.me/917396027092" class="btn-glow">Book Skin Analysis</a>
-  </div>
-  <div style="flex:1"><img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary2.jpg" width="100%" style="border-radius:20px;"/></div>
-</section>
-
-
-
-<section style="padding:20px;">
-  <div class="info-block">
-    <div>
-      <h2>7-Step Medical Hydrafacial</h2>
-      <p>Our premium Hydrafacial goes beyond the surface. It uses vortex-suction to remove toxins while infusing potent antioxidants.</p>
-      <ul style="line-height:2; font-weight:600;">
-        <li>✓ Deep Pore Detoxification</li>
-        <li>✓ Painless Blackhead Extraction</li>
-        <li>✓ Intensive Hyaluronic Hydration</li>
-      </ul>
+    <div class="topbar">
+        <span>📍 1st Floor, Magunta Layout, Nellore</span>
+        <a href="tel:+917396027092" style="color:#fff;text-decoration:none;">📞 +91 73960 27092</a>
     </div>
-    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary4.jpg" width="100%" style="border-radius:20px;"/>
-  </div>
 
-  <div class="info-block" style="background:var(--light-bg);">
-    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary1.jpg" width="100%" style="border-radius:20px;"/>
-    <div>
-      <h2>Acne & Scar Management</h2>
-      <p>Using US-FDA approved chemical peels and laser toning, we target active acne and flatten deep scars.</p>
-      
-      <ul style="line-height:2; font-weight:600;">
-        <li>✓ Salicylic & Mandelic Medical Peels</li>
-        <li>✓ Microneedling for Scar Revision</li>
-        <li>✓ Laser Toning for Pigmentation</li>
-      </ul>
+    <header>
+        <div class="nav-container">
+            <a href="index.html"><img src="https://raw.githubusercontent.com/srinivaskancharla96-netizen/images/main/test.jpg" height="45" alt="Follicare Nellore"></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="skincare.html" style="color:var(--purple)">Skin Care</a>
+                <a href="gallery.html">Results</a>
+                <button onclick="openModal()" class="btn-main" style="margin-left:20px;">BOOK APPOINTMENT</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrap">
+            <h1>Best Skin Doctor in Nellore</h1>
+            <p>Advanced Skin Treatments for Acne, Glow, and Permanent Hair Removal</p>
+            <button onclick="openModal()" class="btn-main">Get Your Free Skin Analysis</button>
+        </div>
+    </section>
+
+    <main class="section wrap">
+        <h2 style="text-align:center; font-family:'Playfair Display',serif; color:var(--purple); font-size:38px;">Our Specialized Skin Treatments</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Acne & Pimples</h3>
+                <p>Comprehensive <b>Skin treatments</b> to clear active acne and stop future pimples under the <b>best skin doctor in Nellore</b>.</p>
+            </div>
+            <div class="card">
+                <h3>Glutathione & Whitening</h3>
+                <p>Brighten your skin tone with <b>Glutathione Nellore</b> infusions, <b>chemical peels</b>, and medical <b>whitening</b>.</p>
+            </div>
+            <div class="card">
+                <h3>Carbon Laser Toning</h3>
+                <p>Instant glow and pore reduction using advanced <b>Carbon laser</b> technology for a flawless look.</p>
+            </div>
+            <div class="card">
+                <h3>Laser Hair Removal</h3>
+                <p>Say goodbye to unwanted hair with our painless, permanent <b>Laser hair removal</b> systems.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="results-section">
+        <div class="wrap">
+            <h2 style="font-family:'Playfair Display',serif; color:var(--purple); font-size:38px;">Treatment Results</h2>
+            <p>Real transformations from our clinic in Nellore</p>
+            <div class="results-container">
+                <div class="result-item">
+                    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary4.jpg" alt="Skin Whitening Result Nellore">
+                    <p style="padding:15px; font-weight:600; color:var(--purple);">Hydrafacial & Glow Result</p>
+                </div>
+                <div class="result-item">
+                    <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary2.jpg" alt="Acne Treatment Result Nellore">
+                    <p style="padding:15px; font-weight:600; color:var(--purple);">Acne Management Result</p>
+                </div>
+            </div>
+            <div style="margin-top:40px;">
+                <a href="gallery.html" class="btn-main" style="background:none; border:2px solid var(--purple); color:var(--purple);">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color:var(--purple); margin-top:0;">Book Consultation</h2>
+            <form onsubmit="alert('Thank you! Our skin expert will call you shortly.'); closeModal(); return false;">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <select required>
+                    <option value="" disabled selected>Select Skin Concern</option>
+                    <option>Acne / Pimples</option>
+                    <option>Glutathione Whitening</option>
+                    <option>Laser Hair Removal</option>
+                    <option>Carbon Laser Glow</option>
+                </select>
+                <button type="submit" class="btn-main" style="width:100%;">CONFIRM BOOKING</button>
+            </form>
+        </div>
     </div>
-  </div>
-</section>
+
+    <footer>
+        <div class="wrap">
+            <h3>Follicare Skin & Hair Clinic</h3>
+            <p>1st Floor, Magunta Layout, Opposite Canara Bank, Nellore, AP</p>
+            <p><strong>Call: +91 73960 27092</strong></p>
+            <div style="margin-top:20px;">
+                <a href="https://wa.me/917396027092" class="btn-main">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+        function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+        window.onclick = function(event) { if (event.target == document.getElementById("bookingModal")) closeModal(); }
+    </script>
 </body>
 </html>
