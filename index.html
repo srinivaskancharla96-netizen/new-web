@@ -1,103 +1,126 @@
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset='utf-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Follicare | Best Skin & Hair Clinic in Nellore</title>
-  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap' rel='stylesheet'>
-  <style>
-    :root{--purple:#6f2f63; --accent:#2dbf6b; --light-bg: #fcfaf8; --max-width:1200px;}
-    *{box-sizing:border-box; scroll-behavior: smooth;}
-    body {font-family:'Open Sans',sans-serif; color:#222; margin:0; background: #fff url('https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Background.jpg') fixed center/cover no-repeat;}
-    .topbar{background:var(--purple);color:#fff;padding:8px 20px;font-size:12px;display:flex;justify-content:space-between;}
-    header{background:rgba(255,255,255,0.95); backdrop-filter: blur(10px); position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.05);}
-    .nav{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;}
-    .logo img{height:45px;}
-    nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;}
-    nav a{color:#222;font-weight:600; text-decoration:none; transition: 0.3s;}
-    nav a:hover{color:var(--purple);}
-    .hero{padding:80px 20px; min-height:80vh; display:flex; align-items:center;}
-    .hero-container{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-    h1{font-family:'Playfair Display',serif;font-size:56px;line-height:1.1;color:var(--purple);margin:0 0 20px;}
-    .btn{padding:14px 28px; border-radius:50px; font-weight:700; cursor:pointer; display:inline-block; text-decoration:none; transition:0.3s;}
-    .btn-solid{background:var(--accent); color:#fff; border:none;}
-    .section{padding:80px 20px;}
-    .wrap{max-width:var(--max-width);margin:0 auto}
-    h2{font-family:'Playfair Display',serif; font-size:42px; text-align:center; color:var(--purple); margin-bottom:40px;}
-    .hair-hub{background:rgba(255,255,255,0.95); border-radius:30px; padding:50px; border:1px solid #eee;}
-    .hair-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
-    @media (max-width: 768px) {.hero-container, .hair-grid {grid-template-columns:1fr; text-align:center;}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follicare | Best Hair Clinic & Skin Doctor in Nellore</title>
+    <meta name="description" content="Follicare is the top-rated hair clinic in Nellore. Consult the best skin doctor in Nellore for FUE hair transplants, acne, and glutathione treatments.">
+    <meta name="keywords" content="hair clinic Nellore, best skin doctor in Nellore, hair transplant Nellore, skin care centers Nellore, dermatologists in Nellore">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--purple:#6f2f63;--accent:#2dbf6b;--white:#ffffff;--max-width:1200px;}
+        body{font-family:'Open Sans',sans-serif;margin:0;color:#333;line-height:1.6;overflow-x:hidden;background:#fcfaf8;}
+        
+        /* HEADER & TOPBAR */
+        .topbar{background:var(--purple);color:#fff;padding:8px 20px;font-size:13px;display:flex;justify-content:space-between;align-items:center;}
+        header{background:rgba(255,255,255,0.98); position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+        .nav-container{max-width:var(--max-width); margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:12px 20px;}
+        .nav-links a{text-decoration:none; color:#333; font-weight:600; margin-left:25px; transition:0.3s;}
+        .nav-links a:hover{color:var(--purple);}
+
+        /* HERO STYLING */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000'); 
+            background-size: cover; background-position: center; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+        }
+        .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(32px, 5vw, 56px); margin:0; }
+        .hero p { font-size:22px; margin:20px 0; }
+
+        /* CONTENT LAYOUT */
+        .section { padding:80px 20px; }
+        .wrap { max-width:var(--max-width); margin:0 auto; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px; margin-top:40px; }
+        .card { background:#fff; padding:40px; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,0.05); text-align:center; transition:0.3s; border-bottom:5px solid var(--purple); }
+        .card:hover { transform:translateY(-10px); }
+        .card h3 { color:var(--purple); font-family:'Playfair Display',serif; }
+
+        /* MODAL POPUP */
+        .modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85); }
+        .modal-content { background:#fff; margin:8% auto; padding:40px; width:90%; max-width:500px; border-radius:20px; position:relative; }
+        .close { position:absolute; right:20px; top:10px; font-size:30px; cursor:pointer; }
+        form input, form select, form textarea { width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; }
+
+        .btn-main { background:var(--accent); color:#fff; padding:15px 35px; border-radius:50px; text-decoration:none; font-weight:700; border:none; cursor:pointer; display:inline-block; }
+        footer { background:var(--purple); color:#fff; padding:60px 20px; text-align:center; }
+    </style>
 </head>
 <body>
-  <div class='topbar'>
-    <div>📞 73960 27092 | Nellore</div>
-    <div><a href='gallery.html' style="color:#fff; text-decoration:none;">View Results Gallery</a></div>
-  </div>
-  <header>
-    <div class='nav'>
-      <div class='logo'><a href="index.html"><img src='https://raw.githubusercontent.com/srinivaskancharla96-netizen/images/main/test.jpg' alt='Follicare'/></a></div>
-      <nav>
-        <ul>
-          <li><a href='index.html'>Home</a></li>
-          <li><a href='#hair-transplant'>Hair Transplant</a></li>
-          <li><a href='skincare.html'>Skin Care</a></li>
-          <li><a href='gallery.html'>Gallery</a></li>
-          <li><a href='#contact'>Contact</a></li>
-        </ul>
-      </nav>
-      <button class="btn btn-solid" style="padding:10px 20px" onclick="window.location.href='#contact'">BOOK NOW</button>
-    </div>
-  </header>
 
-  <section class='hero'>
-    <div class='hero-container'>
-      <div>
-        <h1>Natural Hair & Flawless Skin</h1>
-        <p style="font-size:22px;">Nellore's leading destination for medical aesthetics and permanent hair restoration.</p>
-        <a href="skincare.html" class="btn btn-solid">Explore Skin Services</a>
-        <a href="gallery.html" class="btn" style="border:2px solid var(--purple); margin-left:10px;">View Results</a>
-      </div>
-      <img src='https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/hero-drimage.jpg' style="width:100%; border-radius:30px; box-shadow:0 20px 50px rgba(0,0,0,0.1);"/>
+    <div class="topbar">
+        <span>📍 1st Floor, Magunta Layout, Nellore</span>
+        <a href="tel:+917396027092" style="color:#fff;text-decoration:none;">📞 +91 73960 27092</a>
     </div>
-  </section>
 
-  <section id="hair-transplant" class="section">
-    <div class="wrap">
-      <h2>Hair Transplantation Hub</h2>
-      <div class="hair-hub">
-        <div class="hair-grid">
-          <div>
-            <h3 style="color:var(--purple); font-size:28px; font-family:'Playfair Display';">Permanent FUE Solutions</h3>
-            <p>Restore your hairline with our artistic FUE technique. No linear scars, high density, and lifetime growth.</p>
-            <ul style="font-weight:600; line-height:2;">
-              <li>✓ Advanced GFC & PRP Support</li>
-              <li>✓ Painless Local Anesthesia</li>
-              <li>✓ Natural Hairline Design</li>
-            </ul>
-            <a href="gallery.html" class="btn btn-solid">See Before & After</a>
-          </div>
-          <img src="https://raw.githubusercontent.com/mrsuneel0405-commits/follicareskinandhairportal/main/Gallary3.jpg" style="width:100%; border-radius:20px;"/>
+    <header>
+        <div class="nav-container">
+            <a href="index.html"><img src="https://raw.githubusercontent.com/srinivaskancharla96-netizen/images/main/test.jpg" height="45"></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="skincare.html">Skin Care</a>
+                <a href="gallery.html">Results</a>
+                <button onclick="openModal()" class="btn-main" style="margin-left:20px; padding:10px 25px;">BOOK APPOINTMENT</button>
+            </nav>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section id='contact' class='section'>
-    <div class='wrap'>
-      <div style="background:var(--purple); color:#fff; padding:50px; border-radius:30px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px;">
-        <div>
-          <h2 style="text-align:left; color:#fff; margin-top:0;">Book Consultation</h2>
-          <p>📍 1st Floor Magunta Layout, Opposite Canara Bank, Nellore.</p>
-          <p>📞 73960 27092</p>
+    <section class="hero">
+        <div class="wrap">
+            <h1>Best Hair & Skin Solutions in Nellore</h1>
+            <p>Advanced Clinical Care for Permanent Results</p>
+            <button onclick="openModal()" class="btn-main">Get a Free Consultation</button>
         </div>
-        <form onsubmit="event.preventDefault(); alert('Thank you!')" style="display:grid; gap:15px;">
-          <input type="text" placeholder="Your Name" style="padding:15px; border-radius:10px; border:none;" required>
-          <input type="tel" placeholder="Phone Number" style="padding:15px; border-radius:10px; border:none;" required>
-          <button type="submit" class="btn btn-solid" style="background:var(--accent);">Request Callback</button>
-        </form>
-      </div>
+    </section>
+
+    <main class="section wrap">
+        <h2 style="text-align:center; font-family:'Playfair Display',serif; color:var(--purple); font-size:38px;">Why Follicare is the Best Choice in Nellore</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Hair Clinic Nellore</h3>
+                <p>Specializing in <b>FUE Hair Transplant</b> and advanced hair loss treatments with lifetime results.</p>
+                <a href="hair-transplant.html" style="color:var(--purple); font-weight:700; text-decoration:none;">Learn More →</a>
+            </div>
+            <div class="card">
+                <h3>Best Skin Doctor</h3>
+                <p>Expert <b>Skin treatments</b> for Acne, Glow, and US-FDA Approved Laser Hair Removal.</p>
+                <a href="skincare.html" style="color:var(--purple); font-weight:700; text-decoration:none;">Learn More →</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color:var(--purple);">Book Your Visit</h2>
+            <form onsubmit="alert('Thank you! We will call you back.'); closeModal(); return false;">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <select required>
+                    <option value="" disabled selected>Select Service</option>
+                    <option>Hair Transplant (FUE/FUT)</option>
+                    <option>Skin Treatment (Acne/Laser)</option>
+                    <option>PRP / GFC Therapy</option>
+                </select>
+                <button type="submit" class="btn-main" style="width:100%;">CONFIRM BOOKING</button>
+            </form>
+        </div>
     </div>
-  </section>
+
+    <footer>
+        <div class="wrap">
+            <h3>Follicare Skin & Hair Clinic</h3>
+            <p>1st Floor, Magunta Layout, Opposite Canara Bank, Nellore, AP</p>
+            <p><strong>Call: +91 73960 27092</strong></p>
+            <div style="margin-top:20px;">
+                <a href="https://wa.me/917396027092" class="btn-main">WhatsApp Chat</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+        function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+        window.onclick = function(event) { if (event.target == document.getElementById("bookingModal")) closeModal(); }
+    </script>
 </body>
 </html>
